@@ -29,6 +29,8 @@ The release JAR is self-contained. GuizhanLib and SefiLib are build-time ports a
 
 All Slimefun item identifiers are registered under the `BUMP_` prefix. Localization keeps the original keys while the namespace prevents collisions with other DrakesCraft addons.
 
+Runtime update checks are disabled. Drake builds are released only after compiling against the maintained core and validating the resulting shaded JAR.
+
 ## Build
 
 ```bash
