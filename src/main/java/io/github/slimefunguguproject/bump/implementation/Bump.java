@@ -132,7 +132,7 @@ public final class Bump extends AbstractAddon {
         ItemsSetup.setup(this);
 
         // researches setup
-        boolean enableResearch = config.getBoolean("options.enable-research", true);
+        boolean enableResearch = config.getBoolean("options.enable-researches", true);
         if (enableResearch) {
             ResearchSetup.setup();
         }
