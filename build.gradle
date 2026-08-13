@@ -1,0 +1,72 @@
+plugins {
+    id 'java'
+    id 'com.gradleup.shadow' version '8.3.6'
+    id 'org.sonarqube' version '4.4.1.3373'
+    id 'io.freefair.lombok' version '8.6'
+    id 'net.minecrell.plugin-yml.bukkit' version '0.6.0'
+}
+
+group = 'io.github.slimefunguguproject'
+version = '2.5.0-Drake-1.21.11'
+description = 'Bump'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+
+    maven {
+        url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
+    }
+
+    maven {
+        url = uri('https://jitpack.io')
+        }
+        maven {
+            url = uri('https://repo.papermc.io/repository/maven-public/')
+        }
+        maven {
+            url = uri('https://drakescraft-labs.github.io/maven-repo/')
+    }
+
+    maven {
+        url = uri('https://s01.oss.sonatype.org/content/repositories/snapshots/')
+    }
+}
+
+dependencies {
+    implementation 'com.github.drakescraft_labs:guizhanlib-all:2.5.0-Drake-1.21.11'
+    implementation 'com.github.drakescraft_labs:SefiLib:0.3.0-Drake-1.21.11'
+
+    compileOnly 'io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT'
+    compileOnly 'com.github.drakescraft_labs:slimefun-core:11.0-Drake-1.21.11-SNAPSHOT'
+    compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+}
+
+shadowJar {
+    relocate 'net.guizhanss.guizhanlib', 'io.github.slimefunguguproject.bump.libs.guizhanlib'
+    relocate 'dev.sefiraat.sefilib', 'io.github.slimefunguguproject.bump.libs.sefilib'
+    minimize()
+}
+
+bukkit {
+    main = 'io.github.slimefunguguproject.bump.implementation.Bump'
+    apiVersion = '1.16'
+    authors = ['bxx2004', 'LobbyTech-MC', 'zimzaza4', 'haiman233', 'ybw0014']
+    depend = ['Slimefun']
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "SlimefunGuguProject_Bump"
+        property "sonar.organization", "slimefunguguproject"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}

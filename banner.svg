@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">Bump for DrakesCraft</title><desc id="desc">Animated appraisal-themed banner</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071813"/><stop offset=".55" stop-color="#13253a"/><stop offset="1" stop-color="#281437"/></linearGradient>
+    <linearGradient id="metal" x1="0" x2="1"><stop stop-color="#66e6a5"/><stop offset=".48" stop-color="#e7c65d"/><stop offset="1" stop-color="#a66cff"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="320" rx="24" fill="url(#bg)"/>
+  <path d="M0 265 Q220 210 430 260 T840 245 T1200 250 V320 H0Z" fill="#0c3327" opacity=".9"/>
+  <g fill="none" stroke="#d6bd64" opacity=".32"><path d="M38 42h1124M38 278h1124"/><path d="M62 58v204M1138 58v204"/></g>
+  <g transform="translate(155 160)" filter="url(#glow)">
+    <circle r="88" fill="#0d211b" stroke="url(#metal)" stroke-width="5"/>
+    <path d="M-48 14h96l-13 52h-70zM-35-8l16-48h38L35-8" fill="none" stroke="url(#metal)" stroke-width="13" stroke-linejoin="round"/>
+    <path d="M-62 14h124" stroke="#f4df8a" stroke-width="8" stroke-linecap="round"/>
+    <circle r="5" fill="#fff4ba"><animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/></circle>
+  </g>
+  <g font-family="Georgia,serif">
+    <text x="295" y="143" fill="#f4f0dd" font-size="72" font-weight="700">BUMP</text>
+    <text x="300" y="195" fill="#69dfa2" font-size="27" font-family="Arial,sans-serif" font-weight="700">APPRAISAL · ATTRIBUTES · 1.21.11</text>
+    <text x="300" y="232" fill="#cbd8d0" font-size="21" font-family="Arial,sans-serif">Maintained for the DrakesCraft Slimefun ecosystem</text>
+  </g>
+  <circle cx="1080" cy="78" r="6" fill="#e8c95c"><animate attributeName="cy" values="78;242;78" dur="5s" repeatCount="indefinite"/></circle>
+</svg>
