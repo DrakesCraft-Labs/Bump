@@ -21,10 +21,12 @@ import net.guizhanss.guizhanlib.minecraft.utils.ChatUtil;
  * @author ybw0014
  */
 public class LocalizedItemStack extends SlimefunItemStack {
+    private static final String ID_PREFIX = "BUMP_";
+
     @ParametersAreNonnullByDefault
     public LocalizedItemStack(String id, Material material) {
         super(
-            id,
+            namespacedId(id),
             material,
             Bump.getLocalization().getItemName(id),
             Bump.getLocalization().getItemLore(id)
@@ -34,7 +36,7 @@ public class LocalizedItemStack extends SlimefunItemStack {
     @ParametersAreNonnullByDefault
     public LocalizedItemStack(String id, Material material, String... appendLore) {
         super(
-            id,
+            namespacedId(id),
             material,
             Bump.getLocalization().getItemName(id),
             Bump.getLocalization().getItemLore(id)
@@ -46,7 +48,7 @@ public class LocalizedItemStack extends SlimefunItemStack {
     @ParametersAreNonnullByDefault
     public LocalizedItemStack(String id, String texture) {
         super(
-            id,
+            namespacedId(id),
             texture,
             Bump.getLocalization().getItemName(id),
             Bump.getLocalization().getItemLore(id)
@@ -56,13 +58,17 @@ public class LocalizedItemStack extends SlimefunItemStack {
     @ParametersAreNonnullByDefault
     public LocalizedItemStack(String id, String texture, String... appendLore) {
         super(
-            id,
+            namespacedId(id),
             texture,
             Bump.getLocalization().getItemName(id),
             Bump.getLocalization().getItemLore(id)
         );
 
         appendLore(appendLore);
+    }
+
+    private static String namespacedId(String id) {
+        return id.startsWith(ID_PREFIX) ? id : ID_PREFIX + id;
     }
 
     private void appendLore(String... lores) {

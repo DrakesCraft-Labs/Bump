@@ -6,7 +6,7 @@ plugins {
     id 'net.minecrell.plugin-yml.bukkit' version '0.6.0'
 }
 
-group = 'io.github.slimefunguguproject'
+group = 'com.github.drakescraft_labs'
 version = '2.5.0-Drake-1.21.11'
 description = 'Bump'
 

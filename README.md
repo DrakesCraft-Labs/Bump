@@ -27,6 +27,8 @@ A maintained Java 21 port of Bump for the DrakesCraft Slimefun ecosystem on Pape
 
 The release JAR is self-contained. GuizhanLib and SefiLib are build-time ports and are shaded under Bump's namespace, so production does not need extra library plugins.
 
+All Slimefun item identifiers are registered under the `BUMP_` prefix. Localization keeps the original keys while the namespace prevents collisions with other DrakesCraft addons.
+
 ## Build
 
 ```bash
