@@ -15,15 +15,15 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 
-import com.github.drakescraft_labs.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.slimefunguguproject.bump.api.appraise.AppraiseAttribute;
 import io.github.slimefunguguproject.bump.api.appraise.AppraiseType;
 import io.github.slimefunguguproject.bump.implementation.Bump;
 import io.github.slimefunguguproject.bump.utils.AppraiseUtils;
 import io.github.slimefunguguproject.bump.utils.Utils;
 import io.github.slimefunguguproject.bump.utils.constant.Strings;
-import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
-import com.github.drakescraft_labs.slimefun4.utils.ChestMenuUtils;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 
@@ -155,8 +155,7 @@ public final class AppraiseTypeMenu {
                 Bump.getLocalization().getStringList("appraise_info.material.lore_disabled")
             );
         }
-        result.editMeta(meta -> meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP));
-        return result;
+        return result.addFlags(ItemFlag.HIDE_POTION_EFFECTS);
     }
 
     @Nonnull

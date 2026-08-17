@@ -11,9 +11,9 @@ import io.github.slimefunguguproject.bump.core.services.sounds.BumpSound;
 import io.github.slimefunguguproject.bump.implementation.Bump;
 import io.github.slimefunguguproject.bump.implementation.BumpItems;
 import io.github.slimefunguguproject.bump.utils.constant.Keys;
-import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
-import com.github.drakescraft_labs.slimefun4.implementation.SlimefunItems;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
 
 /**
  * {@link SkySword Heaven Breaking Sword} will lift player up to the sky when using.
@@ -41,7 +41,7 @@ public class SkySword extends BumpSword {
 
         BumpSound.SKY_SWORD_USE.playFor(p);
         for (int i = 0; i < 20; i++) {
-            p.spawnParticle(Particle.EXPLOSION_EMITTER, p.getLocation(), 1);
+            p.spawnParticle(Particle.EXPLOSION_HUGE, p.getLocation(), 1);
         }
         PersistentDataAPI.setBoolean(p, Keys.SKY_SWORD_PROTECTED, true);
     }

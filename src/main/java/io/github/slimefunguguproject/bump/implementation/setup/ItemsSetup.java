@@ -5,7 +5,7 @@ import javax.annotation.Nonnull;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-import com.github.drakescraft_labs.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.slimefunguguproject.bump.core.recipes.BumpRecipeTypes;
 import io.github.slimefunguguproject.bump.implementation.Bump;
 import io.github.slimefunguguproject.bump.implementation.BumpItems;
@@ -29,11 +29,11 @@ import io.github.slimefunguguproject.bump.implementation.items.weapons.SkyDevilS
 import io.github.slimefunguguproject.bump.implementation.items.weapons.SkySword;
 import io.github.slimefunguguproject.bump.implementation.items.weapons.SoulSword;
 import io.github.slimefunguguproject.bump.implementation.items.weapons.WitherSkullBow;
-import com.github.drakescraft_labs.slimefun4.api.SlimefunAddon;
-import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItem;
-import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
-import com.github.drakescraft_labs.slimefun4.implementation.SlimefunItems;
-import com.github.drakescraft_labs.slimefun4.implementation.items.multiblocks.Compressor;
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.implementation.items.multiblocks.Compressor;
 
 import lombok.experimental.UtilityClass;
 

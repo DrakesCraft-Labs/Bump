@@ -1,48 +1,45 @@
 <p align="center">
-  <img src="banner.svg" alt="Bump for DrakesCraft" width="100%">
+  <img src="docs/banner.svg" width="100%" alt="BUMP Animated Banner" />
 </p>
 
-# Bump for DrakesCraft
+# Bump
 
-A maintained Java 21 port of Bump for the DrakesCraft Slimefun ecosystem on Paper/Purpur 1.21.11.
+Addon de **Slimefun 4** enfocado en armas mágicas elementales, alimentos especiales y un sistema interactivo de **tasación de objetos (Appraisal System)**. Adaptado, optimizado y mantenido por **DrakesCraft Labs** para Paper/Purpur 1.21.11 en Java 21.
 
-## Features
+---
 
-- Equipment appraisal with persistent quality and attribute data.
-- Appraisal Instrument, Attribute Grindstone and identification tools.
-- Magic weapons, utility tools and consumable items.
-- Localized names, lore, menus and configurable sounds.
-- Native compatibility with the repackaged DrakesCraft Slimefun core.
-- No telemetry, automatic downloads or runtime update checks.
+## 🎯 Objetivo
 
-## Compatibility
+Enriquecer la progresión de combate y exploración en el servidor con armamento místico, efectos especiales de impacto y mecánicas de tasación que asignan propiedades únicas a los objetos descubiertos en el mundo.
 
-| Component | Target |
-| --- | --- |
-| Java | 21 |
-| Server | Paper/Purpur 1.21.11 |
-| Slimefun | `slimefun-core:11.0-Drake-1.21.11-SNAPSHOT` |
-| GuizhanLib | DrakesCraft port, shaded |
-| SefiLib | DrakesCraft port, shaded |
+---
 
-The release JAR is self-contained. GuizhanLib and SefiLib are build-time ports and are shaded under Bump's namespace, so production does not need extra library plugins.
+## ⚡ Características Principales
 
-All Slimefun item identifiers are registered under the `BUMP_` prefix. Localization keeps the original keys while the namespace prevents collisions with other DrakesCraft addons.
+- **Sistema de Tasación (Appraisal)**:
+  - Permite identificar y revelar estadísticas ocultas y modificadores mágicos en equipamiento.
+  - IDs estandarizados con prefijo seguro (`BUMP_*`) para prevenir colisiones con otros addons.
+- **Armas Mágicas y Báculos**:
+  - Habilidades activas y pasivas elementales (fuego, rayo, hielo y vacío).
+  - Compatible con el sistema de protección y balance de DrakesCraft.
+- **Comida y Pociones Místicas**:
+  - Alimentos con buffs temporales de combate y regeneración.
+- **Localización Completa**:
+  - Textos y guías traducidos al español.
 
-Runtime update checks are disabled. Drake builds are released only after compiling against the maintained core and validating the resulting shaded JAR.
+---
 
-## Build
+## 🛠️ Entorno y Compatibilidad
 
-```bash
-./gradlew clean shadowJar
-```
+- **Servidor**: Paper / Purpur 1.21.11
+- **Java**: 21
+- **Dependencias**:
+  - `Slimefun4-Drake` (Core oficial de DrakesCraft)
 
-The artifact is generated under `build/libs/`.
+---
 
-## Player guide
+## 📜 Créditos y Origen
 
-The server-specific guide is available at [web.drakescraft.cl/guia-slimefun.html#bump](https://web.drakescraft.cl/guia-slimefun.html#bump).
-
-## Credits and license
-
-Bump was originally created by bxx2004 and maintained by the SlimefunGuguProject community. This port preserves the original GPL-3.0 license and credits while adapting the code to DrakesCraft's maintained runtime.
+- **Autor original**: `bxx2004`
+- **Mantenimiento previo**: `LobbyTech-MC`, `zimzaza4`, `SlimefunGuguProject` (`ybw0014`, `haiman233`)
+- **Adaptación y Mantenimiento 1.21.11**: **DrakesCraft Labs**

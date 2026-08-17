@@ -14,8 +14,8 @@ import org.bukkit.inventory.EquipmentSlot;
 
 import io.github.slimefunguguproject.bump.utils.constant.Patterns;
 import io.github.slimefunguguproject.bump.utils.tags.BumpTag;
-import com.github.drakescraft_labs.slimefun4.libraries.commons.lang.Validate;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.common.CommonPatterns;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.common.CommonPatterns;
 
 import net.guizhanss.guizhanlib.slimefun.addon.AddonConfig;
 
@@ -58,7 +58,7 @@ public final class ConfigUtils {
      */
     @Nonnull
     public static Set<Material> parseMaterials(@Nonnull List<String> materialList) throws InvalidConfigurationException {
-        Validate.noNullElements(materialList, "materialList no puede tener elementos nulos");
+        Validate.noNullElements(materialList);
 
         Set<Material> materials = new HashSet<>();
         for (String value : materialList) {
@@ -97,7 +97,7 @@ public final class ConfigUtils {
      */
     @Nonnull
     public static Set<EquipmentSlot> parseEquipmentSlots(@Nonnull List<String> slotList) throws InvalidConfigurationException {
-        Validate.noNullElements(slotList, "slotList no puede tener elementos nulos");
+        Validate.noNullElements(slotList);
 
         Set<EquipmentSlot> equipmentSlots = new HashSet<>();
         for (String value : slotList) {

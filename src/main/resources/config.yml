@@ -3,10 +3,9 @@ version: 4
 
 options:
   # Auto update
-  # Drake builds are deployed only after compatibility validation.
-  auto-update: false
-  # Language shipped and supported by the Drake build.
-  lang: es-ES
+  auto-update: true
+  # Bump language (Available languages: https://github.com/SlimefunGuguProject/Bump#supported-languages)
+  lang: en-US
   # Enable researches
   enable-researches: true
 

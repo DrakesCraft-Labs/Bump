@@ -1,7 +1,7 @@
 package io.github.slimefunguguproject.bump.core.attributes;
 
 import io.github.slimefunguguproject.bump.implementation.items.machines.AppraisalInstrument;
-import com.github.drakescraft_labs.slimefun4.core.attributes.ItemAttribute;
+import io.github.thebusybiscuit.slimefun4.core.attributes.ItemAttribute;
 
 /**
  * This {@link ItemAttribute} indicates that this item can be appraised.

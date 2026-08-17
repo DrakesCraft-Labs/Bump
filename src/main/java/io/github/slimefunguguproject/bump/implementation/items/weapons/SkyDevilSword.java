@@ -12,7 +12,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import io.github.slimefunguguproject.bump.implementation.Bump;
 import io.github.slimefunguguproject.bump.implementation.BumpItems;
 import io.github.slimefunguguproject.bump.implementation.tasks.WeaponProjectileTask;
-import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 
 /**
  * {@link SkyDevilSword Heaven-demon Crumble Sword} will fire 3 {@link DragonFireball dragon fireballs}
@@ -36,7 +36,7 @@ public class SkyDevilSword extends BumpSword {
 
         p.setGlowing(true);
         p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 300, 3));
-        p.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, 300, 3));
+        p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 300, 3));
 
         new BukkitRunnable() {
             int count = 3;

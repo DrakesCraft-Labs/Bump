@@ -17,7 +17,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import io.github.slimefunguguproject.bump.api.appraise.AppraiseType;
 import io.github.slimefunguguproject.bump.implementation.Bump;
 import io.github.slimefunguguproject.bump.utils.constant.Keys;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
 
 import net.guizhanss.guizhanlib.minecraft.utils.ChatUtil;
 
@@ -96,10 +96,10 @@ public final class AppraiseUtils {
     public static AttributeModifier.Operation getOperation(@Nonnull Attribute attribute) {
         Preconditions.checkArgument(attribute != null, "Attribute cannot be null");
 
-        if (attribute == Attribute.MOVEMENT_SPEED || attribute == Attribute.JUMP_STRENGTH) {
-            return AttributeModifier.Operation.ADD_SCALAR;
-        }
-        return AttributeModifier.Operation.ADD_NUMBER;
+        return switch (attribute) {
+            case GENERIC_MOVEMENT_SPEED, HORSE_JUMP_STRENGTH -> AttributeModifier.Operation.ADD_SCALAR;
+            default -> AttributeModifier.Operation.ADD_NUMBER;
+        };
     }
 
     @Nonnull

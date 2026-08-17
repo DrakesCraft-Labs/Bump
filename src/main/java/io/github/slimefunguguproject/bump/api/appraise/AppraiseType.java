@@ -28,12 +28,12 @@ import org.bukkit.inventory.ItemStack;
 import io.github.slimefunguguproject.bump.api.exceptions.AppraiseTypeKeyConflictException;
 import io.github.slimefunguguproject.bump.core.BumpRegistry;
 import io.github.slimefunguguproject.bump.implementation.Bump;
-import com.github.drakescraft_labs.slimefun4.api.SlimefunAddon;
-import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItem;
-import com.github.drakescraft_labs.slimefun4.libraries.commons.lang.Validate;
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 
-import net.guizhanss.guizhanlib.common.utils.RandomUtil;
-import net.guizhanss.guizhanlib.common.utils.StringUtil;
+import net.guizhanss.guizhanlib.utils.RandomUtil;
+import net.guizhanss.guizhanlib.utils.StringUtil;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;
@@ -176,7 +176,7 @@ public class AppraiseType {
      */
     @ParametersAreNonnullByDefault
     public final AppraiseType setDescription(String... description) {
-        Validate.noNullElements(description, "description no puede tener elementos nulos");
+        Validate.noNullElements(description);
         return setDescription(Arrays.asList(description));
     }
 
@@ -190,7 +190,7 @@ public class AppraiseType {
     @ParametersAreNonnullByDefault
     public final AppraiseType setDescription(List<String> description) {
         checkState();
-        Validate.noNullElements(description, "description no puede tener elementos nulos");
+        Validate.noNullElements(description);
         this.description = description;
         return this;
     }
@@ -337,7 +337,7 @@ public class AppraiseType {
      */
     @ParametersAreNonnullByDefault
     public final AppraiseType addValidSlimefunItemIds(String... slimefunItemIds) {
-        Validate.noNullElements(slimefunItemIds, "slimefunItemIds no puede tener elementos nulos");
+        Validate.noNullElements(slimefunItemIds);
         return addValidSlimefunItemIds(Arrays.asList(slimefunItemIds));
     }
 
@@ -351,7 +351,7 @@ public class AppraiseType {
     @ParametersAreNonnullByDefault
     public final AppraiseType addValidSlimefunItemIds(Collection<String> slimefunItemIds) {
         checkState();
-        Validate.noNullElements(slimefunItemIds, "slimefunItemIds no puede tener elementos nulos");
+        Validate.noNullElements(slimefunItemIds);
         validSlimefunItemIds.addAll(slimefunItemIds);
         return this;
     }
@@ -365,7 +365,7 @@ public class AppraiseType {
      */
     @ParametersAreNonnullByDefault
     public final AppraiseType addValidEquipmentSlots(EquipmentSlot... equipmentSlots) {
-        Validate.noNullElements(equipmentSlots, "equipmentSlots no puede tener elementos nulos");
+        Validate.noNullElements(equipmentSlots);
         return addValidEquipmentSlots(Arrays.asList(equipmentSlots));
     }
 
@@ -379,7 +379,7 @@ public class AppraiseType {
     @ParametersAreNonnullByDefault
     public final AppraiseType addValidEquipmentSlots(Collection<EquipmentSlot> equipmentSlots) {
         checkState();
-        Validate.noNullElements(equipmentSlots, "equipmentSlots no puede tener elementos nulos");
+        Validate.noNullElements(equipmentSlots);
         validEquipmentSlots.addAll(equipmentSlots);
         return this;
     }

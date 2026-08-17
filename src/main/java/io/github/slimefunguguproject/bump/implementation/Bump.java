@@ -21,11 +21,14 @@ import io.github.slimefunguguproject.bump.implementation.setup.ResearchSetup;
 import io.github.slimefunguguproject.bump.implementation.tasks.WeaponProjectileTask;
 import io.github.slimefunguguproject.bump.utils.WikiUtils;
 import io.github.slimefunguguproject.bump.utils.tags.BumpTag;
-import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 import net.guizhanss.guizhanlib.slimefun.addon.AbstractAddon;
 import net.guizhanss.guizhanlib.slimefun.addon.AddonConfig;
+import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
 
+import org.bstats.bukkit.Metrics;
+import org.bstats.charts.SimplePie;
 
 /**
  * Main class for {@link Bump}.
@@ -46,7 +49,7 @@ public final class Bump extends AbstractAddon {
     private SoundService soundService;
 
     public Bump() {
-        super("DrakesCraft-Labs", "Bump", "main", "options.auto-update");
+        super("SlimefunGuguProject", "Bump", "main", "options.auto-update");
     }
 
     @Nonnull
@@ -82,8 +85,8 @@ public final class Bump extends AbstractAddon {
         sendConsole("&6&l                                   \\/_/ ");
         sendConsole("&a&l  Bump 2 for Slimefun4 RC-30+");
         sendConsole("&a&l  Powered By bxx2004, SlimefunGuguProject");
-        sendConsole("&a&l  GitHub: https://github.com/DrakesCraft-Labs/Bump");
-        sendConsole("&a&l  Guide: https://web.drakescraft.cl/guia-slimefun.html#bump");
+        sendConsole("&a&l  GitHub: https://github.com/SlimefunGuguProject/Bump");
+        sendConsole("&a&l  Issues: https://github.com/SlimefunGuguProject/Bump/issues");
 
         // config
         AddonConfig config = getAddonConfig();
@@ -132,7 +135,7 @@ public final class Bump extends AbstractAddon {
         ItemsSetup.setup(this);
 
         // researches setup
-        boolean enableResearch = config.getBoolean("options.enable-researches", true);
+        boolean enableResearch = config.getBoolean("options.enable-research", true);
         if (enableResearch) {
             ResearchSetup.setup();
         }
@@ -146,6 +149,10 @@ public final class Bump extends AbstractAddon {
         // tasks
         WeaponProjectileTask.start();
 
+        // Metrics setup
+        final Metrics metrics = new Metrics(this, 14870);
+        metrics.addCustomChart(new SimplePie("server_language", () -> lang));
+        metrics.addCustomChart(new SimplePie("enable_research", () -> enableResearch ? "enabled" : "disabled"));
     }
 
     @Override
@@ -153,24 +160,22 @@ public final class Bump extends AbstractAddon {
         Bukkit.getScheduler().cancelTasks(this);
     }
 
-    /**
-     * El autoactualizador queda desarmado a proposito en DrakesCraft.
-     *
-     * Este jar esta recompilado contra el Slimefun repaquetado del servidor. El que hay en el
-     * GitHub de upstream apunta a los paquetes originales, asi que si el actualizador se lo
-     * trajera encima, el addon dejaria de cargar. Se despliega por SFTP, como el resto.
-     *
-     * Lo llamaba por reflexion, con el nombre de la clase metido en una cadena, asi que no
-     * aparecia en los imports ni lo veia una busqueda del nombre de la clase.
-     */
     @Override
     protected void autoUpdate() {
-        // Sin cuerpo a proposito.
+        try {
+            // use updater in lib plugin
+            Class<?> clazz = Class.forName("net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater");
+            Method updaterStart = clazz.getDeclaredMethod("start", Plugin.class, File.class, String.class, String.class, String.class);
+            updaterStart.invoke(null, this, getFile(), getGithubUser(), getGithubRepo(), getGithubBranch());
+        } catch (Exception ignored) {
+            // use updater in lib
+            new GuizhanBuildsUpdater(this, getFile(), getGithubUser(), getGithubRepo(), getGithubBranch()).start();
+        }
     }
 
     @Nonnull
     public String getWikiURL() {
-        return "https://web.drakescraft.cl/guia-slimefun.html#bump";
+        return "https://slimefun-addons-wiki.guizhanss.cn/bump/{0}";
     }
 
     private boolean isSCSlimefun(@Nonnull String sfVersion) {

@@ -14,6 +14,6 @@ public final class Strings {
     public static final String CHECK = ChatColor.GREEN + "✔";
     public static final String CROSS = ChatColor.RED + "✘";
 
-    public static final String WIKI_EN = "https://web.drakescraft.cl/guia-slimefun.html#bump";
-    public static final String WIKI_CN = "https://web.drakescraft.cl/guia-slimefun.html#bump";
+    public static final String WIKI_EN = "https://bump.ybw0014.dev/";
+    public static final String WIKI_CN = "https://slimefun-addons-wiki.guizhanss.cn/bump/";
 }

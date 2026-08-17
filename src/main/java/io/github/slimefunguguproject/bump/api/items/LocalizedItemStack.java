@@ -10,7 +10,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.slimefunguguproject.bump.core.services.LocalizationService;
 import io.github.slimefunguguproject.bump.implementation.Bump;
-import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 
 import net.guizhanss.guizhanlib.minecraft.utils.ChatUtil;
 
@@ -21,12 +21,10 @@ import net.guizhanss.guizhanlib.minecraft.utils.ChatUtil;
  * @author ybw0014
  */
 public class LocalizedItemStack extends SlimefunItemStack {
-    private static final String ID_PREFIX = "BUMP_";
-
     @ParametersAreNonnullByDefault
     public LocalizedItemStack(String id, Material material) {
         super(
-            namespacedId(id),
+            id,
             material,
             Bump.getLocalization().getItemName(id),
             Bump.getLocalization().getItemLore(id)
@@ -36,7 +34,7 @@ public class LocalizedItemStack extends SlimefunItemStack {
     @ParametersAreNonnullByDefault
     public LocalizedItemStack(String id, Material material, String... appendLore) {
         super(
-            namespacedId(id),
+            id,
             material,
             Bump.getLocalization().getItemName(id),
             Bump.getLocalization().getItemLore(id)
@@ -48,7 +46,7 @@ public class LocalizedItemStack extends SlimefunItemStack {
     @ParametersAreNonnullByDefault
     public LocalizedItemStack(String id, String texture) {
         super(
-            namespacedId(id),
+            id,
             texture,
             Bump.getLocalization().getItemName(id),
             Bump.getLocalization().getItemLore(id)
@@ -58,17 +56,13 @@ public class LocalizedItemStack extends SlimefunItemStack {
     @ParametersAreNonnullByDefault
     public LocalizedItemStack(String id, String texture, String... appendLore) {
         super(
-            namespacedId(id),
+            id,
             texture,
             Bump.getLocalization().getItemName(id),
             Bump.getLocalization().getItemLore(id)
         );
 
         appendLore(appendLore);
-    }
-
-    private static String namespacedId(String id) {
-        return id.startsWith(ID_PREFIX) ? id : ID_PREFIX + id;
     }
 
     private void appendLore(String... lores) {

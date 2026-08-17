@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import net.guizhanss.guizhanlib.common.utils.StringUtil;
+import net.guizhanss.guizhanlib.utils.StringUtil;
 
 import lombok.experimental.UtilityClass;
 
@@ -56,7 +56,7 @@ public final class Utils {
         }
 
         final ItemMeta itemMeta = item.getItemMeta();
-        itemMeta.addEnchant(Enchantment.LUCK_OF_THE_SEA, 1, true);
+        itemMeta.addEnchant(Enchantment.LUCK, 1, true);
         itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(itemMeta);
     }

@@ -10,8 +10,8 @@ import io.github.slimefunguguproject.bump.core.services.sounds.BumpSound;
 import io.github.slimefunguguproject.bump.implementation.Bump;
 import io.github.slimefunguguproject.bump.implementation.BumpItems;
 import io.github.slimefunguguproject.bump.implementation.tasks.WeaponProjectileTask;
-import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
-import com.github.drakescraft_labs.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 
 /**
  * {@link DevilSword Demon Slayer Sword} will launch {@link SmallFireball} when using.
@@ -37,7 +37,7 @@ public class DevilSword extends BumpSword {
         for (int i = 0; i < 20; i++) {
             Projectile projectile = p.launchProjectile(SmallFireball.class);
             WeaponProjectileTask.track(projectile);
-            p.spawnParticle(Particle.ENCHANT, p.getLocation(), 1);
+            p.spawnParticle(Particle.ENCHANTMENT_TABLE, p.getLocation(), 1);
         }
     }
 }

@@ -14,14 +14,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import com.github.drakescraft_labs.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.slimefunguguproject.bump.implementation.Bump;
-import com.github.drakescraft_labs.slimefun4.utils.SlimefunUtils;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
 import net.guizhanss.guizhanlib.localization.Localization;
-import net.guizhanss.guizhanlib.minecraft.localization.MinecraftLocalization;
+import net.guizhanss.guizhanlib.localization.MinecraftLocalization;
 import net.guizhanss.guizhanlib.minecraft.utils.ChatUtil;
-import net.guizhanss.guizhanlib.common.utils.StringUtil;
+import net.guizhanss.guizhanlib.utils.StringUtil;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.TextComponent;
