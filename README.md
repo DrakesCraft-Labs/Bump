@@ -53,3 +53,13 @@ Enriquecer la progresión de combate y exploración en el servidor con armamento
 - **Autor original**: `bxx2004`
 - **Mantenimiento previo**: `LobbyTech-MC`, `zimzaza4`, `SlimefunGuguProject` (`ybw0014`, `haiman233`)
 - **Adaptación y Mantenimiento 1.21.11**: **DrakesCraft Labs**
+
+## ⚖️ Upstream Attribution & License / Licencia y Créditos
+
+- **Original Project / Upstream**: Slimefun4 Community Addon.
+- **Port & Maintenance**: DrakesCraft Labs team (Compatibility for Paper / Purpur 1.21.11).
+- **License**: GPL-3.0 / MIT.
+- **Source Code**: [GitHub Repository](https://github.com/DrakesCraft-Labs/Bump)
+- **Support & Issues**: [GitHub Issues](https://github.com/DrakesCraft-Labs/Bump/issues) | [Discord](https://discord.gg/rR7FbfCt9Y)
+
+*This project is an open-source derivative work maintained by DrakesCraft Labs under the terms of its original license. All original assets and concepts belong to their respective creators.*
